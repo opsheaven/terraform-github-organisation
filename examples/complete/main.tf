@@ -1,5 +1,5 @@
 module "this" {
-  source = "../"
+  source = "../../"
 
 
   organisation = {

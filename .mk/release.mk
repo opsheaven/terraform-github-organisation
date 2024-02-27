@@ -14,12 +14,13 @@ else ifeq ($(COMMIT_TYPE),patch)
 NEXT_VERSION= v$(MAJOR).$(MINOR).$(shell echo $$(($(PATCH)+1)))
 endif
 
-.PHONY: release/tag
-release/tag:
+.PHONY: release
+release:
 ifneq ($(NEXT_VERSION),)
 	@echo "Creating tag $(NEXT_VERSION)"
 	@git tag $(NEXT_VERSION)
 	@git push origin $(NEXT_VERSION)
+	@gh release create $(TAG) --generate-notes
 else
-	@echo "Last commit does not contain #major,#minor or #patch. Skipping tag!"
+	@echo "Last commit does not contain #major,#minor or #patch. Skipping tag and release!"
 endif

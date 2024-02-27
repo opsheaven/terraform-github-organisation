@@ -2,6 +2,11 @@
 
 OpsHeaven's Terraform module to manage GitHub Organizations.
 
+## Examples
+
+* Complete Example:https://github.com/opsheaven/terraform-github-organisation/tree/main/examples/complete
+* OpsHeaven Configuration: https://github.com/opsheaven/provisioner/tree/main/github/opsheaven
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
